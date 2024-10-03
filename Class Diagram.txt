@@ -1,0 +1,61 @@
+User
+Attributes:
+UserID (unique identifier)
+Username
+Password
+Email
+Role (e.g., Admin, Customer)
+Methods:
+Register()
+Login()
+UpdateProfile()
+2. InvitationCard
+Attributes:
+CardID (unique identifier)
+EventName
+Date
+Location
+HostName
+Methods:
+BookCard()
+ModifyCard()
+CancelCard()
+3. Booking
+Attributes:
+BookingID (unique identifier)
+UserID (link to User)
+CardID (link to InvitationCard)
+BookingDate
+Status (e.g., Confirmed, Cancelled)
+Methods:
+CreateBooking()
+ModifyBooking()
+CancelBooking()
+ViewStatus()
+4. Payment
+Attributes:
+PaymentID (unique identifier)
+BookingID (link to Booking)
+Amount
+PaymentDate
+PaymentStatus (e.g., Paid, Pending, Refunded)
+Methods:
+ProcessPayment()
+RefundPayment()
+5. Admin
+Attributes:
+Inherits User attributes
+Methods:
+ManageUsers() (add, remove, update users)
+PermitCard() (authorize or deny a booking)
+ViewReports() (overview of bookings, payments, etc.)
+6. CardPermission
+Attributes:
+PermissionID (unique identifier)
+BookingID (link to Booking)
+AdminID (link to Admin who permitted)
+PermissionStatus (e.g., Permitted, Denied)
+DatePermitted
+Methods:
+GrantPermission()
+DenyPermission()
